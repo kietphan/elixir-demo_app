@@ -2,6 +2,7 @@ defmodule LoveTime.UserController do
   use LoveTime.Web, :controller
 
   alias LoveTime.User
+  plug Coherence.Authentication.Session, [protected: true] when action in [:create, :update, :new, :edit, :delete]
 
   def index(conn, _params) do
     users = Repo.all(User)

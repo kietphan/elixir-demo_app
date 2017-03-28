@@ -17,10 +17,6 @@
     <%= @user.bio %>
   </li>
 
-  <li>
-    <strong>Encrypted password:</strong>
-    <%= @user.encrypted_password %>
-  </li>
 
   <li>
     <strong>Number of pets:</strong>
@@ -31,17 +27,6 @@
     <strong>Birthday:</strong>
     <%= @user.birthday %>
   </li>
-
-  <li>
-    <strong>Reset password token:</strong>
-    <%= @user.reset_password_token %>
-  </li>
-
-  <li>
-    <strong>Reset password token at:</strong>
-    <%= @user.reset_password_token_at %>
-  </li>
-
 </ul>
 
 <%= link "Edit", to: user_path(@conn, :edit, @user) %>
