@@ -39,4 +39,13 @@ config :coherence,
 config :coherence, LoveTime.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: "your api key here"
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "LoveTime",
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  verify_issuer: true, # optional
+  secret_key: 'asdaasdasd34234asdasdasdasdasdasdasd13213',
+  serializer: LoveTime.GuardianSerializer
 # %% End Coherence Configuration %%
